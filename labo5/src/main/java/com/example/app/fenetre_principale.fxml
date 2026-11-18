@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.app.MainController">
+    <top>
+        <MenuBar>
+            <Menu text="Fichier">
+                
+                
+                <MenuItem text="Sauvegarder perspective" onAction="#sauvegarder" />
+                <MenuItem text="Charger perspective"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Charger image" onAction="#ouvrirImage" />
+                <SeparatorMenuItem/>
+                <MenuItem text="Quitter"/>
+                
+            </Menu>
+            <Menu text="Édition">
+                <MenuItem text="Défaire (Undo)" onAction="#defaireAction" />
+                <MenuItem text="refaire (Redo)" />
+            </Menu>
+
+            <Menu text="Presse-Papier">
+
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.33, 0.67">
+            <items>
+                <BorderPane fx:id="panneauVignette" />
+                <BorderPane fx:id="panneauPerspective1"/>
+                <BorderPane fx:id="panneauPerspective2"/>
+                <HBox fx:id="panneauPerspectives" spacing="10" alignment="CENTER" />
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>
